@@ -1,26 +1,16 @@
 import flet as ft
-
+from views import PageTaskView
+from routes import home
 
 def main(page: ft.Page):
-    counter = ft.Text("0", size=50, data=0)
-
-    def increment_click(e):
-        counter.data += 1
-        counter.value = str(counter.data)
-        counter.update()
-
-    page.floating_action_button = ft.FloatingActionButton(
-        icon=ft.Icons.ADD, on_click=increment_click
-    )
-    page.add(
-        ft.SafeArea(
-            ft.Container(
-                counter,
-                alignment=ft.alignment.center,
-            ),
-            expand=True,
-        )
-    )
+    
+    page.title = "Todo App"
+    page.window.height = 600
+    page.window.width = 370
 
 
-ft.app(main)
+    page.on_route_change = lambda e: home(page)
+    page.go(page.route)
+
+if __name__ == "__main__":
+    ft.app(target=main)

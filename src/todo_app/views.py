@@ -14,7 +14,7 @@ def PageTaskView(page: ft.Page):
        page.update()
 
     def view_remove_task(input_task):
-        def remove_event():
+        def remove_event(e):
             remove_task(input_task)
             render_tasks()
             page.update()
@@ -22,7 +22,7 @@ def PageTaskView(page: ft.Page):
 
     def view_toggle_task(input_task):
 
-        def toggle_event():
+        def toggle_event(e):
             toggle_task(input_task)
             render_tasks()
             page.update()
