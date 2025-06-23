@@ -1,7 +1,16 @@
 import flet as ft
 from controllers import global_tasks, add_task, remove_task, toggle_task
 
-# User INPUT
+"""
+A View é responsável por tudo o que o usuário vê e interage:
+campos de texto, botões, listas, checkboxes etc.
+Ela não processa regras de negócio — isso fica com o controller.
+Ela apenas exibe os dados e dispara eventos que serão tratados
+por outras camadas.
+"""
+
+
+# função que representa a tela principal
 def PageTaskView(page: ft.Page):
 
     def view_add_task(e):
