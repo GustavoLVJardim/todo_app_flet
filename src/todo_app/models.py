@@ -2,9 +2,9 @@ import flet as ft
 
 # estrutura de dados para representar uma tarefa
 class Task():
-    def __init__(self, title):
+    def __init__(self, title, done=False):
         self.title = title # texto descritivo da tarefa
-        self.done = False # booleano (indica se foi concluída ou não)
+        self.done = done # booleano (indica se foi concluída ou não)
 
 
     def to_dict(self):

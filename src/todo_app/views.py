@@ -38,12 +38,21 @@ def PageTaskView(page: ft.Page):
         return toggle_event
 
 
+    title = ft.Text("ToDo App", size=20, weight='bold', color=ft.Colors.BLUE, text_align=ft.TextAlign.CENTER)
 
         
     input_user = ft.Row(
         controls=[
         ft.TextField(label="Task"),
         ft.IconButton(icon=ft.Icons.ADD, on_click=view_add_task)
+        ]
+        
+    )
+
+    route_buttons = ft.Row(
+        controls=[
+        ft.IconButton(icon=ft.Icons.HISTORY, on_click=lambda _: page.go('/history')),
+        ft.IconButton(icon=ft.Icons.SETTINGS, on_click=lambda _: page.go('/config'))
         ]
         
     )
@@ -69,6 +78,6 @@ def PageTaskView(page: ft.Page):
 
     return ft.View(
         "/",
-        controls=[input_user, column]
+        controls=[title, route_buttons, input_user, column]
     )
               

@@ -1,8 +1,14 @@
 import flet as ft
 from views import PageTaskView
+from views_history import view_history
+from views_config import view_config
 
-def home(page: ft.Page):
-    if page.route == "/":
-        page.views.clear()
-        page.views.append(PageTaskView(page))
-        page.update()
+def home(route):
+    if route == "/":
+        return PageTaskView
+
+    elif route == "/history":
+        return view_history
+
+    elif route == "/config":
+        return view_config
