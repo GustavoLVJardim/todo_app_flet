@@ -1,5 +1,5 @@
 import flet as ft
-from controllers import global_tasks, add_task, remove_task, toggle_task
+from todo_app.controllers.task_controllers import global_tasks, add_task, remove_task, toggle_task
 
 """
 A View é responsável por tudo o que o usuário vê e interage:

@@ -1,7 +1,8 @@
 import flet as ft
 from urllib.parse import urlparse, parse_qs
-from controllers import *
-from views import *
+from todo_app.controllers.task_controllers import *
+
+from todo_app.views import *
 
 
 def view_history(page: ft.Page):

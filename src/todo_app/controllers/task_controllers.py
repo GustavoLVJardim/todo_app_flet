@@ -1,5 +1,6 @@
-from models import Task
-from storage import load_tasks, save_tasks
+from todo_app.models.models import Task
+
+from todo_app.controllers.storage import load_tasks, save_tasks
 
 
 

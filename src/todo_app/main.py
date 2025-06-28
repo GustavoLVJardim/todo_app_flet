@@ -1,6 +1,5 @@
 import flet as ft
-
-from routes import home
+from todo_app.routes import home
 
 def main(page: ft.Page):
     
@@ -11,11 +10,10 @@ def main(page: ft.Page):
     def route_change_handler(e):
         print(page.route)
         page.views.clear()
-        view = home(page.route)
+        view = home(page.route, page)
         if view:
-            page.views.append(view(page))
+            page.views.append(view)
         page.update()
-
 
     page.on_route_change = route_change_handler
     page.go(page.route)
