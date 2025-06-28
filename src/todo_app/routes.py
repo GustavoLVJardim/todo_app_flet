@@ -4,11 +4,13 @@ from views_history import view_history
 from views_config import view_config
 
 def home(route):
-    if route == "/":
-        return PageTaskView
+    
 
-    elif route == "/history":
+    if route.startswith("/history"):
         return view_history
 
-    elif route == "/config":
+    elif route.startswith("/config"):
         return view_config
+
+    elif route.startswith("/"):
+        return PageTaskView

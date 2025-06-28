@@ -1,6 +1,8 @@
 from models import Task
 from storage import load_tasks, save_tasks
 
+
+
 # funções que controlam a lógica do app (manipulam a lista de tarefas)
 
 # lista onde cada tarefa é armazenada
@@ -28,3 +30,24 @@ def toggle_task(task_to_toggle):
         return
     task_to_toggle.done = not task_to_toggle.done
     save_tasks(global_tasks)
+
+
+def get_filtered_tasks(task_status):
+    done_tasks = []
+    pending_tasks = []
+    if task_status == "done":
+        for task in global_tasks:
+            if task.done:
+                done_tasks.append(task)
+        return done_tasks
+    
+    if task_status == "pending":
+        for task in global_tasks:
+            if not task.done:
+                pending_tasks.append(task)
+        return pending_tasks
+    
+    return global_tasks
+
+            
+    

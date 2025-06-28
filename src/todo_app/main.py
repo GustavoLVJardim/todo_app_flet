@@ -9,6 +9,7 @@ def main(page: ft.Page):
     page.window.width = 370
 
     def route_change_handler(e):
+        print(page.route)
         page.views.clear()
         view = home(page.route)
         if view:

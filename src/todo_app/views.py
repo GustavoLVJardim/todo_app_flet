@@ -51,7 +51,7 @@ def PageTaskView(page: ft.Page):
 
     route_buttons = ft.Row(
         controls=[
-        ft.IconButton(icon=ft.Icons.HISTORY, on_click=lambda _: page.go('/history')),
+        ft.IconButton(icon=ft.Icons.HISTORY, on_click=lambda _: page.go("/history?filter=done")),
         ft.IconButton(icon=ft.Icons.SETTINGS, on_click=lambda _: page.go('/config'))
         ]
         
