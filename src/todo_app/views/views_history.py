@@ -44,7 +44,7 @@ def view_history(page: ft.Page):
         column.controls.append(row)
 
     if len(filtered_tasks) == 0:
-        column.controls.append(ft.Text("No tasks found"))
+        column.controls.append(ft.Text("No items found"))
 
 
     

@@ -20,11 +20,17 @@ def save_task_in_firestore(task):
     doc_ref.set(task.to_dict())
 
 def get_all_tasks_from_firestore():
-    list_tasks = []
     db = get_firestore_db()
-    doc_ref = db.collection('tasks').get()
-    for doc in doc_ref:
-        list_tasks.append(doc.to_dict())
-    return list_tasks
+    docs = db.collection("tasks").stream()
+
+    tasks_data = []
+
+    for doc in docs:
+        task_dict = doc.to_dict()
+        task_dict["id"] = doc.id
+        tasks_data.append(task_dict)
+
+    return tasks_data
+
 
 
